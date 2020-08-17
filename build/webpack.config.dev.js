@@ -20,6 +20,19 @@ module.exports = {
         use: 'vue-loader'
       },
       {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              esModule: false
+            }
+          },
+          'sass-loader'
+        ]
+      },
+      {
         test: /\.css$/,
         use: [
           'vue-style-loader',

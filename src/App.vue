@@ -1,17 +1,21 @@
 <template>
-  <div class="full-width center-content">
-    <h1>Hello World!</h1>
+  <div>
+    <h1>Hello <span>World</span>!</h1>
   </div>
 </template>
 
 <script>
-import '../assets/app.css'
-
 export default {
   name: "App"
 }
 </script>
 
-<style scoped>
-  h1 { color: red; }
+<style lang="scss" scoped>
+  h1 {
+    font-size: 18px;
+
+    span {
+      color: red;
+    }
+  }
 </style>>
