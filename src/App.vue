@@ -6,7 +6,18 @@
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  methods: {
+    test() {
+      return new Promise((resolve) => {
+        resolve('promise')
+      })
+    }
+  },
+  async beforeMount() {
+    const msg = await this.test();
+    console.log(msg);
+  }
 }
 </script>
 
