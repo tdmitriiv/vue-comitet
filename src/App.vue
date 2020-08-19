@@ -6,19 +6,19 @@
 
 <script>
 export default {
-  name: "App",
-  methods: {
-    test() {
-      return new Promise((resolve) => {
-        resolve('promise')
-      })
-    }
-  },
+  name: 'App',
   async beforeMount() {
     const msg = await this.test();
     console.log(msg);
-  }
-}
+  },
+  methods: {
+    test() {
+      return new Promise((resolve) => {
+        resolve('promise');
+      });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
