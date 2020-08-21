@@ -1,5 +1,9 @@
 <template>
   <div>
+    <img
+      src="./assets/logo.png"
+      alt="vue logo"
+    >
     <h1>Hello <span>World</span>!</h1>
   </div>
 </template>
