@@ -4,7 +4,9 @@
       src="./assets/logo.png"
       alt="vue logo"
     >
-    <h1>Hello <span>World</span>!</h1>
+    <h1 class="text-lg">
+      Hello <span class="text-red-900">World</span>!
+    </h1>
   </div>
 </template>
 
@@ -28,11 +30,5 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss" scoped>
-  h1 {
-    font-size: 18px;
-
-    span {
-      color: red;
-    }
-  }
+  @import "src/assets/index.scss";
 </style>>
