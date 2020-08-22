@@ -8,21 +8,23 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App',
+<script lang="ts">
+import Vue from 'vue';
+import Component from 'vue-class-component';
+
+@Component({})
+export default class App extends Vue {
+  test(): Promise<string> {
+    return new Promise((resolve) => {
+      resolve('promise');
+    });
+  }
+
   async beforeMount() {
     const msg = await this.test();
     console.log(msg);
-  },
-  methods: {
-    test() {
-      return new Promise((resolve) => {
-        resolve('promise');
-      });
-    },
-  },
-};
+  }
+}
 </script>
 
 <style lang="scss" scoped>

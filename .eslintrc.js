@@ -1,12 +1,22 @@
 module.exports = {
+  parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 8,
+    sourceType: 'module'
   },
   extends: [
-    "airbnb-base",
-    "plugin:vue/recommended"
+    'airbnb-base',
+    'plugin:vue/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jsdoc/recommended',
   ],
   plugins: [
-    'vue'
-  ]
+    '@typescript-eslint',
+    'vue',
+    'jsdoc'
+  ],
+  rules: {
+    'class-methods-use-this': 'off'
+  }
 }

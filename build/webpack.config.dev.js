@@ -2,17 +2,25 @@
 const webpack = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
+
 module.exports = {
   mode: 'development',
   entry: [
-    '@babel/polyfill',
-    './src/index.js'
+    './src/index.ts'
   ],
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle-[hash].js'
+  },
   devServer: {
     hot: true,
     watchOptions: {
       poll: true
     }
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
   },
   module: {
     rules: [
@@ -25,6 +33,14 @@ module.exports = {
       {
         test: /\.vue$/,
         use: 'vue-loader'
+      },
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader',
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
+        },
+        exclude: /node_modules/
       },
       {
         test: /\.js$/,
