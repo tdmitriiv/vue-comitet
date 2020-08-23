@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -18,5 +20,12 @@ module.exports = {
   ],
   rules: {
     'class-methods-use-this': 'off'
-  }
+  },
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: path.join(__dirname, 'build','webpack.config.dev.js')
+      }
+    }
+  },
 }

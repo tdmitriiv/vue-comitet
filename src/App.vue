@@ -13,8 +13,13 @@
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import Admin from '@/layout/Admin.vue';
 
-@Component({})
+@Component({
+  components: {
+    Admin,
+  },
+})
 export default class App extends Vue {
   test(): Promise<string> {
     return new Promise((resolve) => {
