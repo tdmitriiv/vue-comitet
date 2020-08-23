@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <AdminLayout>
     <img
       src="./assets/logo.png"
       alt="vue logo"
@@ -7,17 +7,17 @@
     <h1 class="text-lg">
       Hello <span class="text-red-900">World</span>!
     </h1>
-  </div>
+  </AdminLayout>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import Admin from '@/layout/Admin.vue';
+import AdminLayout from '@/layout/Admin.vue';
 
 @Component({
   components: {
-    Admin,
+    AdminLayout,
   },
 })
 export default class App extends Vue {
@@ -34,6 +34,6 @@ export default class App extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import "src/assets/index.scss";
 </style>>
