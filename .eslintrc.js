@@ -19,7 +19,8 @@ module.exports = {
     'jsdoc'
   ],
   rules: {
-    'class-methods-use-this': 'off'
+    'class-methods-use-this': 'off',
+    'max-len': ['warn',  { 'code': 100 }]
   },
   settings: {
     'import/resolver': {
