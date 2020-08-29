@@ -4,8 +4,9 @@
       <aside class="border border-gray-800">
         <div class="flex flex-col justify-between h-full">
           <div>
-            <div class="text-white py-4 px-5 border-b-2 border-gray-800">
-              <span class="font-bold text-sm">КМТТ Admin</span>
+            <div class="flex items-center text-white py-4 px-5 border-b-2 border-gray-800">
+              <Logo max-width="20" max-height="20" class="mr-2" />
+              <span class="inline-block font-bold text-sm leading-none">КМТТ Admin</span>
             </div>
             <div class="py-4">
               <div class="uppercase text-sm py-1 px-5 text-gray-600">Статистика</div>
@@ -40,12 +41,14 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Component from 'vue-class-component';
+import { Component } from 'vue-property-decorator';
 import { LayersIcon } from 'vue-feather-icons';
+import Logo from '@/components/Logo.vue';
 
 @Component({
   components: {
     LayersIcon,
+    Logo,
   },
 })
 export default class Admin extends Vue {}
