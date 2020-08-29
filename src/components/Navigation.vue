@@ -10,34 +10,21 @@
           />
           <span class="inline-block font-bold text-sm leading-none">КМТТ Admin</span>
         </div>
-        <div class="py-4">
+        <div
+          class="py-4"
+          v-for="(group, index) in navGroups"
+          :key="index"
+        >
           <div class="uppercase text-sm py-1 px-5 text-gray-600">
-            Статистика
+            {{ group.name }}
           </div>
           <a
-            href="#"
             class="block py-1 px-5 text-sm"
-          >Публикации</a>
-          <a
-            href="#"
-            class="block py-1 px-5 text-sm"
-          >Мессенджер</a>
-        </div>
-        <div class="py-4">
-          <a
-            href="#"
-            class="block py-1 px-5 text-sm"
-          >Подписка на еженедельную рассылку</a>
-        </div>
-        <div class="py-4">
-          <div class="uppercase text-sm py-1 px-5 text-gray-600">
-            Списки данных
-          </div>
-          <a
-            href="#"
-            class="block py-1 px-5 text-sm bg-white bg-opacity-10"
+            :href="navLink.url"
+            v-for="(navLink, linkIndex) in group.items"
+            :key="linkIndex"
           >
-            Доступные города
+            {{ navLink.name }}
           </a>
         </div>
       </div>
@@ -53,6 +40,8 @@
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 import { LayersIcon } from 'vue-feather-icons';
+import { NavigationGroup } from '@/types/navigationTypes';
+import { nav } from '@/utils/navigation';
 import Logo from './Logo.vue';
 
 @Component({
@@ -61,7 +50,9 @@ import Logo from './Logo.vue';
     Logo,
   },
 })
-export default class Menu extends Vue {}
+export default class Menu extends Vue {
+  readonly navGroups: NavigationGroup[] = nav;
+}
 </script>
 
 <style scoped>
