@@ -5,10 +5,15 @@
       Управление пользователями
     </h1>
     <section>
-      <div>
-        <h4>Список пользователей</h4>
+      <div class="flex items-center justify-between text-sm">
+        <h4 class="font-medium inline-block">Список пользователей</h4>
+        <div class="inline-flex items-center border border-gray-800 py-2 px-3 rounded-lg text-gray-600">
+          <SearchIcon size="16" class="mr-2"></SearchIcon>
+          <input class="bg-transparent appearance-none focus:outline-none placeholder-gray-600" type="text" placeholder="Поиск">
+        </div>
+
       </div>
-      <table class="table-auto w-full">
+      <table class="table-auto w-full mb-4">
         <thead class="text-sm">
           <tr>
             <th
@@ -93,6 +98,7 @@ import {
   AtSignIcon,
   InfoIcon,
   DiscIcon,
+  SearchIcon,
 } from 'vue-feather-icons';
 import AdminLayout from '@/layout/Admin.vue';
 
@@ -104,6 +110,7 @@ import AdminLayout from '@/layout/Admin.vue';
     AtSignIcon,
     InfoIcon,
     DiscIcon,
+    SearchIcon,
   },
 })
 export default class App extends Vue {
