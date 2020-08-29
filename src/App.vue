@@ -6,12 +6,20 @@
     </h1>
     <section>
       <div class="flex items-center justify-between text-sm">
-        <h4 class="font-medium inline-block">Список пользователей</h4>
+        <h4 class="font-medium inline-block">
+          Список пользователей
+        </h4>
         <div class="inline-flex items-center border border-gray-800 py-2 px-3 rounded-lg text-gray-600">
-          <SearchIcon size="16" class="mr-2"></SearchIcon>
-          <input class="bg-transparent appearance-none focus:outline-none placeholder-gray-600" type="text" placeholder="Поиск">
+          <SearchIcon
+            size="16"
+            class="mr-2"
+          />
+          <input
+            class="bg-transparent appearance-none focus:outline-none placeholder-gray-600"
+            type="text"
+            placeholder="Поиск"
+          >
         </div>
-
       </div>
       <table class="table-auto w-full mb-4">
         <thead class="text-sm">
@@ -75,10 +83,18 @@
                 56723
               </a>
             </td>
-            <td class="border border-gray-800 px-4 py-2">Alex stone</td>
-            <td class="border border-gray-800 px-4 py-2">alexstone.greatsoul@gmail.com</td>
-            <td class="border border-gray-800 px-4 py-2">Активен</td>
-            <td class="border border-gray-800 border-r-0 px-4 py-2">test</td>
+            <td class="border border-gray-800 px-4 py-2">
+              Alex stone
+            </td>
+            <td class="border border-gray-800 px-4 py-2">
+              alexstone.greatsoul@gmail.com
+            </td>
+            <td class="border border-gray-800 px-4 py-2">
+              Активен
+            </td>
+            <td class="border border-gray-800 border-r-0 px-4 py-2">
+              test
+            </td>
           </tr>
         </tbody>
       </table>
