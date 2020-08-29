@@ -1,0 +1,69 @@
+<template>
+  <aside class="border border-gray-800">
+    <div class="flex flex-col justify-between h-full">
+      <div>
+        <div class="flex items-center text-white py-4 px-5 border-b-2 border-gray-800">
+          <Logo
+            max-width="20"
+            max-height="20"
+            class="mr-2"
+          />
+          <span class="inline-block font-bold text-sm leading-none">КМТТ Admin</span>
+        </div>
+        <div class="py-4">
+          <div class="uppercase text-sm py-1 px-5 text-gray-600">
+            Статистика
+          </div>
+          <a
+            href="#"
+            class="block py-1 px-5 text-sm"
+          >Публикации</a>
+          <a
+            href="#"
+            class="block py-1 px-5 text-sm"
+          >Мессенджер</a>
+        </div>
+        <div class="py-4">
+          <a
+            href="#"
+            class="block py-1 px-5 text-sm"
+          >Подписка на еженедельную рассылку</a>
+        </div>
+        <div class="py-4">
+          <div class="uppercase text-sm py-1 px-5 text-gray-600">
+            Списки данных
+          </div>
+          <a
+            href="#"
+            class="block py-1 px-5 text-sm bg-white bg-opacity-10"
+          >
+            Доступные города
+          </a>
+        </div>
+      </div>
+      <div class="flex px-6 text-sm">
+        <LayersIcon class="text-gray-600 mr-6" />
+        Библиотека компонентов
+      </div>
+    </div>
+  </aside>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+import { Component } from 'vue-property-decorator';
+import { LayersIcon } from 'vue-feather-icons';
+import Logo from './Logo.vue';
+
+@Component({
+  components: {
+    LayersIcon,
+    Logo,
+  },
+})
+export default class Menu extends Vue {}
+</script>
+
+<style scoped>
+
+</style>
