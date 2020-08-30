@@ -1,5 +1,7 @@
 import {
 	NavigationGroup,
+	NavigationItem,
+	NavigationPage,
 } from '@/types/navigationTypes';
 import { LayersIcon } from 'vue-feather-icons';
 
@@ -51,3 +53,23 @@ export const nav:NavigationGroup[] = [
 		bottom: true,
 	}
 ];
+
+const findGroupPageByUrl = (url: string, group: NavigationGroup): NavigationItem|undefined => {
+	return group.items.find((groupItem) => groupItem.url === url);
+}
+
+export const findPageInfoByUrl = (currentUrl: string): NavigationPage => {
+	let page;
+
+	const group = nav.find((group) => {
+		page = findGroupPageByUrl(currentUrl, group);
+		if (page) {
+			return true
+		}
+	});
+
+	return {
+		page,
+		group
+	}
+}

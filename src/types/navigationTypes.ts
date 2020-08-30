@@ -1,4 +1,4 @@
-import { Component }from 'vue'
+import { Component } from 'vue'
 
 /**
  *
@@ -54,4 +54,21 @@ export interface NavigationItem {
 	 * список доступных иконок https://vue-feather-icons.egoist.sh/
 	 */
 	icon?: Component;
+}
+
+/**
+ * Объект данных страницы
+ * page - объект страницы
+ * group - текущий раздел страницы
+ */
+export interface NavigationPage {
+	/**
+	 * Page - объект содержащий информацию о странице
+	 */
+	page: NavigationItem | undefined;
+
+	/**
+	 * Group - объект содержащий информацию о текущем разделе
+	 */
+	group: NavigationGroup | undefined;
 }
