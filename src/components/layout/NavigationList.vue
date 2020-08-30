@@ -11,10 +11,10 @@
       >
         {{ group.name }}
       </div>
-      <a
+      <router-link
         v-for="(navLink, linkIndex) in group.items"
         :key="linkIndex"
-        :href="navLink.url"
+        :to="`/${navLink.url}`"
         class="flex py-1 px-5 text-sm"
       >
         <component
@@ -23,7 +23,7 @@
           class="text-gray-600 mr-3"
         />
         {{ navLink.name }}
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
