@@ -3,7 +3,6 @@ import {
 	NavigationItem,
 	NavigationPage,
 } from '@/types/navigationTypes';
-import { LayersIcon } from 'vue-feather-icons';
 
 export const nav:NavigationGroup[] = [
 	{
@@ -47,7 +46,7 @@ export const nav:NavigationGroup[] = [
 			{
 				name: 'Библиотека компонентов',
 				url: 'components',
-				icon: LayersIcon,
+				icon: 'LayersIcon',
 			},
 		],
 		bottom: true,

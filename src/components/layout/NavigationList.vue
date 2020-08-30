@@ -17,10 +17,11 @@
         :to="`/${navLink.url}`"
         class="flex py-1 px-5 text-sm"
       >
-        <component
-          :is="navLink.icon"
+        <AppIcon
+          :icon="navLink.icon"
           v-if="navLink.icon"
           class="text-gray-600 mr-3"
+          size="16"
         />
         {{ navLink.name }}
       </router-link>
@@ -31,12 +32,17 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { NavigationGroup } from '@/types/navigationTypes';
+import AppIcon from '@/components/ui/AppIcon.vue';
 
 /**
  * Компонент выводит разделы навигации,
  * которые передаются через свойство navGroups
  */
-@Component
+@Component({
+  components: {
+    AppIcon,
+  },
+})
 export default class NavigationList extends Vue {
   /**
    * NavGroups - список разделов навигации

@@ -53,7 +53,7 @@ export interface NavigationItem {
 	 * Icon - компонент иконки рядом с пунктом меню.
 	 * список доступных иконок https://vue-feather-icons.egoist.sh/
 	 */
-	icon?: Component;
+	icon?: string;
 }
 
 /**
