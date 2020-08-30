@@ -40,7 +40,7 @@ export interface NavigationItem {
 	name: string;
 
 	/**
-	 * Url - параметр адресной строки для vue-router
+	 * Url - параметр маршрута для vue-router
 	 */
 	url: string;
 

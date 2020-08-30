@@ -54,10 +54,19 @@ export const nav:NavigationGroup[] = [
 	}
 ];
 
+/**
+ * Функция возвращает объект страницы в искомом разделе по полю url
+ * @param url - параметр маршрута страницы
+ * @param group - раздел, в котором происходит поиск страницы
+ */
 const findGroupPageByUrl = (url: string, group: NavigationGroup): NavigationItem|undefined => {
 	return group.items.find((groupItem) => groupItem.url === url);
-}
+};
 
+/**
+ * Функция возвращает данные страницы и её раздела по полю url искомой страницы
+ * @param currentUrl - параметр маршрута страницы
+ */
 export const findPageInfoByUrl = (currentUrl: string): NavigationPage => {
 	let page;
 
@@ -72,4 +81,4 @@ export const findPageInfoByUrl = (currentUrl: string): NavigationPage => {
 		page,
 		group
 	}
-}
+};

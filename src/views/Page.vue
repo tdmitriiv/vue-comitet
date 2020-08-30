@@ -152,8 +152,8 @@ export default class Home extends Vue {
   /**
    * Watcher обновляет информацию о странице и разделе,
    * в зависимости от параметра name текущего маршрута
-   * @param url
-   * @param oldUrl
+   * @param url - значение параметра маршрута страницы
+   * @param oldUrl - предыдущее значение параметра маршрута страницы
    */
   @Watch('currentPageUrl', { immediate: true })
   getCurrentPageInfo(url: string | undefined, oldUrl: string | undefined): void {
