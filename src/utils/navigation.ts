@@ -1,6 +1,7 @@
 import {
 	NavigationGroup,
 } from '@/types/navigationTypes';
+import { LayersIcon } from 'vue-feather-icons';
 
 export const nav:NavigationGroup[] = [
 	{
@@ -37,5 +38,16 @@ export const nav:NavigationGroup[] = [
 				content: ''
 			}
 		]
+	},
+	{
+		name: '',
+		items: [
+			{
+				name: 'Библиотека компонентов',
+				url: 'components',
+				icon: LayersIcon,
+			},
+		],
+		bottom: true,
 	}
 ];

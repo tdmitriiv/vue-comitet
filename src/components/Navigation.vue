@@ -10,48 +10,44 @@
           />
           <span class="inline-block font-bold text-sm leading-none">КМТТ Admin</span>
         </div>
-        <div
-          class="py-4"
-          v-for="(group, index) in navGroups"
-          :key="index"
-        >
-          <div class="uppercase text-sm py-1 px-5 text-gray-600">
-            {{ group.name }}
-          </div>
-          <a
-            class="block py-1 px-5 text-sm"
-            :href="navLink.url"
-            v-for="(navLink, linkIndex) in group.items"
-            :key="linkIndex"
-          >
-            {{ navLink.name }}
-          </a>
-        </div>
+        <NavigationList :nav-groups="mainNavGroups" />
       </div>
-      <div class="flex px-6 text-sm">
-        <LayersIcon class="text-gray-600 mr-6" />
-        Библиотека компонентов
+      <div>
+        <NavigationList :nav-groups="bottomNavGroups" />
       </div>
     </div>
   </aside>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { Component } from 'vue-property-decorator';
-import { LayersIcon } from 'vue-feather-icons';
+import { Vue, Component } from 'vue-property-decorator';
 import { NavigationGroup } from '@/types/navigationTypes';
 import { nav } from '@/utils/navigation';
+import NavigationList from '@/components/layout/NavigationList.vue';
 import Logo from './Logo.vue';
 
 @Component({
   components: {
-    LayersIcon,
     Logo,
+    NavigationList,
   },
 })
 export default class Menu extends Vue {
   readonly navGroups: NavigationGroup[] = nav;
+
+  /**
+   * Основная навигация, выводится вверху боковой панели
+   */
+  get mainNavGroups(): NavigationGroup[] {
+    return this.navGroups.filter((group) => !group.bottom);
+  }
+
+  /**
+   * Дополнительная навигация, которая располагается внизу боковой панели
+   */
+  get bottomNavGroups(): NavigationGroup[] {
+    return this.navGroups.filter((group) => group.bottom);
+  }
 }
 </script>
 
