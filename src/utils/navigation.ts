@@ -42,6 +42,7 @@ const publications = [
           field: 'actions',
           name: 'Действия',
           icon: 'DiscIcon',
+          component: 'AppTableCellDropdown',
         },
       ],
       tableData: [
