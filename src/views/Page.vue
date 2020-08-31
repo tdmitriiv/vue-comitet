@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="groupName">{{ group.name }}</div>
+    <div class="groupName">
+      {{ group.name }}
+    </div>
     <h1 class="font-bold">
       {{ page.name }}
     </h1>

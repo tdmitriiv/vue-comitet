@@ -20,7 +20,7 @@ const publications = [
           name: 'ID',
           icon: 'ListIcon',
           component: 'AppTableCellLink',
-          link: '/'
+          link: '/',
         },
         {
           field: 'name',
