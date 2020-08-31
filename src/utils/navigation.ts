@@ -8,8 +8,8 @@ const publications = [
 	{
 		component: 'AppTable',
 		options: {
-			title: '',
-			isSearchable: true,
+			title: 'Список пользователей',
+			searchField: 'name',
 			tableHeaders: [
 				{
 					field: 'id',

@@ -1,28 +1,50 @@
 <template>
-  <table class="table-auto w-full" v-bind="$attrs">
-    <thead class="text-sm">
-      <tr>
-        <AppTableHeader
-          v-for="(col, index) in tableHeaders"
-          :key="index"
-          :col="col"
-        />
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        v-for="(row, rowIndex) in tableData"
-        :key="rowIndex"
+  <div>
+    <div class="flex items-center justify-between text-sm">
+      <h4 class="font-medium inline-block">
+        {{ title }}
+      </h4>
+      <div
+        v-if="searchField"
+        class="inline-flex items-center border border-gray-800 py-2 px-3 rounded-lg text-gray-600"
       >
-        <AppTableCell
-          v-for="(col, colIndex) in tableHeaders"
-          :key="colIndex"
+        <SearchIcon
+          size="16"
+          class="mr-2"
+        />
+        <input
+          class="bg-transparent appearance-none focus:outline-none placeholder-gray-600"
+          type="text"
+          placeholder="Поиск"
+          v-model="search"
         >
-          {{ row[col.field] }}
-        </AppTableCell>
-      </tr>
-    </tbody>
-  </table>
+      </div>
+    </div>
+    <table class="table-auto w-full" v-bind="$attrs">
+      <thead class="text-sm">
+        <tr>
+          <AppTableHeader
+            v-for="(col, index) in tableHeaders"
+            :key="index"
+            :col="col"
+          />
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="(row, rowIndex) in filteredTableData"
+          :key="rowIndex"
+        >
+          <AppTableCell
+            v-for="(col, colIndex) in tableHeaders"
+            :key="colIndex"
+          >
+            {{ row[col.field] }}
+          </AppTableCell>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script lang="ts">
@@ -38,14 +60,44 @@ import { TableHeader } from '@/types/tableTypes';
   },
 })
 export default class AppTable extends Vue {
-  @Prop()
-  tableHeaders!: Array<TableHeader>;
+  /**
+   * Значение строки поиска
+   */
+  search = '';
 
+  /**
+   * Массив заголовков таблицы
+   */
   @Prop()
-  tableData!: Record<string, any>[];
+  readonly tableHeaders!: TableHeader[];
 
-  // @Prop({ type: Array })
-  // readonly tableData: Record<string, any>[];
+  /**
+   * Массив элементов таблицы
+   */
+  @Prop()
+  readonly tableData!: Record<string, any>[];
+
+  /**
+   * Заголовок таблицы
+   */
+  @Prop()
+  readonly title!: string;
+
+  /**
+   * Значение поля, по которому осуществляется поиск среди элементов таблицы
+   */
+  @Prop()
+  readonly searchField!: string;
+
+  /**
+   * Отфильтрованные элементы таблицы по полю searchField,
+   * в которых содержится значение search
+   */
+  get filteredTableData(): Record<string, any>[] {
+    return this.searchField
+      ? this.tableData.filter((row) => row[this.searchField].includes(this.search))
+      : this.tableData;
+  }
 }
 </script>
 

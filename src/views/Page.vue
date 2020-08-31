@@ -5,22 +5,6 @@
       {{ page.name }}
     </h1>
     <section>
-      <div class="flex items-center justify-between text-sm">
-        <h4 class="font-medium inline-block">
-          Список пользователей
-        </h4>
-        <div class="inline-flex items-center border border-gray-800 py-2 px-3 rounded-lg text-gray-600">
-          <SearchIcon
-            size="16"
-            class="mr-2"
-          />
-          <input
-            class="bg-transparent appearance-none focus:outline-none placeholder-gray-600"
-            type="text"
-            placeholder="Поиск"
-          >
-        </div>
-      </div>
       <template v-if="isPageContentComplex">
         <component
           v-for="(element, index) in page.content"
