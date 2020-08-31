@@ -1,10 +1,8 @@
-import { Component } from 'vue'
-
 /**
  *
  */
 export interface ContentItem {
-	component: Component;
+	component: string;
 	options: Record<string, any>;
 }
 

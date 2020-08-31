@@ -21,7 +21,18 @@
           >
         </div>
       </div>
-      <table class="table-auto w-full mb-4">
+      <template v-if="isPageContentComplex">
+        <component
+          v-for="(element, index) in page.content"
+          :is="element.component"
+          v-bind="element.options"
+          :key="index"
+        />
+      </template>
+      <div v-else>
+        {{ page.content }}
+      </div>
+      <!--<table class="table-auto w-full mb-4">
         <thead class="text-sm">
         <tr>
           <th
@@ -97,10 +108,10 @@
           </td>
         </tr>
         </tbody>
-      </table>
-      <div class="text-white bg-blue-600 inline-block text-sm px-5 py-2 rounded-md">
+      </table>-->
+      <AppButton>
         Добавить пользователя
-      </div>
+      </AppButton>
     </section>
   </div>
 </template>
@@ -120,6 +131,8 @@ import {
   NavigationItem,
 } from '@/types/navigationTypes';
 import { findPageInfoByUrl } from '@/utils/navigation';
+import AppButton from '@/components/ui/AppButton.vue';
+import AppTable from '@/components/ui/table/AppTable.vue';
 
 @Component({
   components: {
@@ -129,6 +142,8 @@ import { findPageInfoByUrl } from '@/utils/navigation';
     InfoIcon,
     DiscIcon,
     SearchIcon,
+    AppButton,
+    AppTable,
   },
 })
 export default class Home extends Vue {
@@ -147,6 +162,10 @@ export default class Home extends Vue {
    */
   get currentPageUrl(): string | undefined {
     return this.$route.params.url;
+  }
+
+  get isPageContentComplex() {
+    return Array.isArray(this.page?.content);
   }
 
   /**

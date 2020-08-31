@@ -4,6 +4,58 @@ import {
 	NavigationPage,
 } from '@/types/navigationTypes';
 
+const publications = [
+	{
+		component: 'AppTable',
+		options: {
+			tableHeaders: [
+				{
+					field: 'id',
+					name: 'ID',
+					icon: 'ListIcon',
+				},
+				{
+					field: 'name',
+					name: 'Имя',
+					icon: 'UserIcon',
+				},
+				{
+					field: 'email',
+					name: 'Email',
+					icon: 'AtSignIcon',
+				},
+				{
+					field: 'status',
+					name: 'Статус',
+					icon: 'InfoIcon',
+				},
+				{
+					field: 'actions',
+					name: 'Действия',
+					icon: 'DiscIcon',
+				},
+			],
+			tableData: [
+				{
+					id: 123,
+					name: 'test',
+					email: 'test@test.ru',
+					status: true,
+					actions: ['add', 'edit'],
+				},
+				{
+					id: 123,
+					name: 'test',
+					email: 'test@test.ru',
+					status: true,
+					actions: ['add', 'edit'],
+				},
+			],
+			class: 'mb-2',
+		},
+	},
+]
+
 export const nav:NavigationGroup[] = [
 	{
 		name: 'Статистика',
@@ -11,12 +63,12 @@ export const nav:NavigationGroup[] = [
 			{
 				name: 'Публикации',
 				url: 'publications',
-				content: ''
+				content: publications,
 			},
 			{
 				name: 'Мессенджер',
 				url: 'messenger',
-				content: ''
+				content: 'text messenger'
 			},
 		],
 	},
@@ -25,8 +77,8 @@ export const nav:NavigationGroup[] = [
 		items: [
 			{
 				name: 'Подписка на еженедельную рассылку',
-				url: 'subscribtion',
-				content: ''
+				url: 'subscription',
+				content: 'text subscription'
 			}
 		]
 	},
@@ -36,7 +88,7 @@ export const nav:NavigationGroup[] = [
 			{
 				name: 'Доступные города',
 				url: 'cities',
-				content: ''
+				content: 'text cities'
 			}
 		]
 	},
@@ -47,6 +99,7 @@ export const nav:NavigationGroup[] = [
 				name: 'Библиотека компонентов',
 				url: 'components',
 				icon: 'LayersIcon',
+				content: 'text components',
 			},
 		],
 		bottom: true,
