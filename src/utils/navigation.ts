@@ -8,6 +8,8 @@ const publications = [
 	{
 		component: 'AppTable',
 		options: {
+			title: '',
+			isSearchable: true,
 			tableHeaders: [
 				{
 					field: 'id',
@@ -53,6 +55,17 @@ const publications = [
 			],
 			class: 'mb-2',
 		},
+	},
+	{
+		component: 'AppButton',
+		options: {
+			title: 'Добавить пользователя',
+			events: {
+				click: () => {
+					alert('add action');
+				}
+			}
+		}
 	},
 ]
 

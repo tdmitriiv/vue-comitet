@@ -109,9 +109,6 @@
         </tr>
         </tbody>
       </table>-->
-      <AppButton>
-        Добавить пользователя
-      </AppButton>
     </section>
   </div>
 </template>
