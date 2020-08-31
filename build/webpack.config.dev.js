@@ -1,16 +1,19 @@
 'use strict'
-const webpack = require('webpack')
-const { VueLoaderPlugin } = require('vue-loader')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const path = require('path')
+const webpack = require('webpack');
+const { VueLoaderPlugin } = require('vue-loader');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require('path');
+
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  mode: 'development',
+  mode: isProd ? 'production' : 'development',
   entry: [
     './src/index.ts'
   ],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: 'bundle-[hash].js'
   },
   devServer: {
@@ -41,7 +44,8 @@ module.exports = {
         test: /\.ts$/,
         loader: 'ts-loader',
         options: {
-          appendTsSuffixTo: [/\.vue$/]
+          appendTsSuffixTo: [/\.vue$/],
+          ...isProd ? { configFile: 'tsconfig.prod.json' } : {},
         },
         exclude: /node_modules/
       },
@@ -75,7 +79,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(),
+    ...isProd ? [] : [ new webpack.HotModuleReplacementPlugin() ],
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
