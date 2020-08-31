@@ -1,8 +1,11 @@
-const { colors } = require('tailwindcss/defaultTheme')
+const { colors, fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: [],
   theme: {
+    fontFamily: {
+      'sans': ['Roboto', ...fontFamily.sans],
+    },
     extend: {
       colors: {
         gray: {
