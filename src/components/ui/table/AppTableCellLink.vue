@@ -14,9 +14,15 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 
 @Component
 export default class AppTableCellLink extends Vue {
+  /**
+   * Значение ячейки
+   */
   @Prop()
   readonly value!: string | number;
 
+  /**
+   * Ссылка ячейки
+   */
   @Prop()
   readonly link!: string;
 }

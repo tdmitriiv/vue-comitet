@@ -36,6 +36,7 @@ const publications = [
           field: 'status',
           name: 'Статус',
           icon: 'InfoIcon',
+          component: 'AppTableCellBoolean',
         },
         {
           field: 'actions',
