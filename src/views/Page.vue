@@ -7,10 +7,10 @@
     <section>
       <template v-if="isPageContentComplex">
         <component
-          v-for="(element, index) in page.content"
           :is="element.component"
-          v-bind="element.options"
+          v-for="(element, index) in page.content"
           :key="index"
+          v-bind="element.options"
         />
       </template>
       <div v-else>
@@ -100,14 +100,6 @@
 <script lang="ts">
 import { Vue, Component, Watch } from 'vue-property-decorator';
 import {
-  AtSignIcon,
-  DiscIcon,
-  InfoIcon,
-  ListIcon,
-  SearchIcon,
-  UserIcon,
-} from 'vue-feather-icons';
-import {
   NavigationGroup,
   NavigationItem,
 } from '@/types/navigationTypes';
@@ -117,12 +109,6 @@ import AppTable from '@/components/ui/table/AppTable.vue';
 
 @Component({
   components: {
-    ListIcon,
-    UserIcon,
-    AtSignIcon,
-    InfoIcon,
-    DiscIcon,
-    SearchIcon,
     AppButton,
     AppTable,
   },
@@ -145,13 +131,17 @@ export default class Home extends Vue {
     return this.$route.params.url;
   }
 
-  get isPageContentComplex() {
+  /**
+   * Свойство проверяет является ли содержимое страницы массивом
+   */
+  get isPageContentComplex(): boolean {
     return Array.isArray(this.page?.content);
   }
 
   /**
    * Watcher обновляет информацию о странице и разделе,
    * в зависимости от параметра name текущего маршрута
+   *
    * @param url - значение параметра маршрута страницы
    * @param oldUrl - предыдущее значение параметра маршрута страницы
    */

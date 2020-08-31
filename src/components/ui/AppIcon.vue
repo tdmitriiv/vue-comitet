@@ -11,6 +11,7 @@ export default Vue.extend({
     },
     size: {
       type: String,
+      default: '16',
     },
   },
   render(h, ctx) {

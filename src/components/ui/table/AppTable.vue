@@ -13,14 +13,17 @@
           class="mr-2"
         />
         <input
+          v-model="search"
           class="bg-transparent appearance-none focus:outline-none placeholder-gray-600"
           type="text"
           placeholder="Поиск"
-          v-model="search"
         >
       </div>
     </div>
-    <table class="table-auto w-full" v-bind="$attrs">
+    <table
+      class="table-auto w-full"
+      v-bind="$attrs"
+    >
       <thead class="text-sm">
         <tr>
           <AppTableHeader

@@ -1,7 +1,19 @@
+/**
+ * Интерфейс заголовка таблицы
+ */
 export interface TableHeader {
-	field: string;
+  /**
+   * Field - Поле данных колонки
+   */
+  field: string;
 
-	name: string;
+  /**
+   * Name - Наименование колонки
+   */
+  name: string;
 
-	icon: string;
+  /**
+   * Icon - Иконка рядом с наименованием
+   */
+  icon: string;
 }

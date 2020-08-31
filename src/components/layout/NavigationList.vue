@@ -18,8 +18,8 @@
         class="flex py-1 px-5 text-sm"
       >
         <AppIcon
-          :icon="navLink.icon"
           v-if="navLink.icon"
+          :icon="navLink.icon"
           class="text-gray-600 mr-3"
           size="16"
         />

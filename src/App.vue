@@ -1,6 +1,6 @@
 <template>
   <AdminLayout>
-    <router-view/>
+    <router-view />
   </AdminLayout>
 </template>
 
@@ -20,7 +20,7 @@ export default class App extends Vue {
     });
   }
 
-  async beforeMount() {
+  async beforeMount(): Promise<void> {
     const msg = await this.test();
     console.log(msg);
   }

@@ -2,21 +2,21 @@
  * Доступны компоненты для содержимого
  */
 export enum ComponentNames {
-	Button = 'AppButton',
-	Table = 'AppTable',
+  Button = 'AppButton',
+  Table = 'AppTable',
 }
 
 export interface ContentItem {
-	/**
-	 * Объект компонента содержимого страницы
-	 */
-	component: ComponentNames;
+  /**
+   * Объект компонента содержимого страницы
+   */
+  component: ComponentNames;
 
-	/**
-	 * Опции компонента
-	 * см Props компонентов ComponentNames
-	 */
-	options: Record<string, any>;
+  /**
+   * Опции компонента
+   * см Props компонентов ComponentNames
+   */
+  options: Record<string, any>;
 }
 
 /**
@@ -25,46 +25,46 @@ export interface ContentItem {
  * items - пункты меню
  */
 export interface NavigationGroup {
-	/**
-	 * Name - наименование раздела в навигации
-	 */
-	name: string;
+  /**
+   * Name - наименование раздела в навигации
+   */
+  name: string;
 
-	/**
-	 * Items - содержит массив пунктов меню
-	 */
-	items: NavigationItem[];
+  /**
+   * Items - содержит массив пунктов меню
+   */
+  items: NavigationItem[];
 
-	/**
-	 * Bottom - расположение группы ссылок в нижней части навигации (ПК - версия)
-	 */
-	bottom?: boolean;
+  /**
+   * Bottom - расположение группы ссылок в нижней части навигации (ПК - версия)
+   */
+  bottom?: boolean;
 }
 
 /**
  * Пункт меню
  */
 export interface NavigationItem {
-	/**
-	 * Name - наименование пункта в навигации
-	 */
-	name: string;
+  /**
+   * Name - наименование пункта в навигации
+   */
+  name: string;
 
-	/**
-	 * Url - параметр маршрута для vue-router
-	 */
-	url: string;
+  /**
+   * Url - параметр маршрута для vue-router
+   */
+  url: string;
 
-	/**
-	 * Content - содержимое страницы, содержит либо строку, либо массив Компонентов
-	 */
-	content?: Array<ContentItem> | string | null;
+  /**
+   * Content - содержимое страницы, содержит либо строку, либо массив Компонентов
+   */
+  content?: Array<ContentItem> | string | null;
 
-	/**
-	 * Icon - компонент иконки рядом с пунктом меню.
-	 * список доступных иконок https://vue-feather-icons.egoist.sh/
-	 */
-	icon?: string;
+  /**
+   * Icon - компонент иконки рядом с пунктом меню.
+   * список доступных иконок https://vue-feather-icons.egoist.sh/
+   */
+  icon?: string;
 }
 
 /**
@@ -73,13 +73,13 @@ export interface NavigationItem {
  * group - текущий раздел страницы
  */
 export interface NavigationPage {
-	/**
-	 * Page - объект содержащий информацию о странице
-	 */
-	page: NavigationItem | undefined;
+  /**
+   * Page - объект содержащий информацию о странице
+   */
+  page: NavigationItem | undefined;
 
-	/**
-	 * Group - объект содержащий информацию о текущем разделе
-	 */
-	group: NavigationGroup | undefined;
+  /**
+   * Group - объект содержащий информацию о текущем разделе
+   */
+  group: NavigationGroup | undefined;
 }
