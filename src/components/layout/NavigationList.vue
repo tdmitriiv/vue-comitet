@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="pt-4">
     <div
       v-for="(group, index) in navGroups"
       :key="index"
-      class="py-4"
+      class="pb-2"
     >
       <div
         v-if="group.name"
-        class="uppercase text-sm py-1 px-5 text-gray-600"
+        class="uppercase font-medium py-2 px-5 text-gray-600 groupName"
       >
         {{ group.name }}
       </div>
@@ -16,13 +16,13 @@
         :key="linkIndex"
         :to="`/${navLink.url}`"
         :class="{ 'bg-white bg-opacity-10': navLink.url === currentPageUrl }"
-        class="flex py-1 px-5 text-sm"
+        class="flex text-sm groupLink"
       >
         <AppIcon
           v-if="navLink.icon"
           :icon="navLink.icon"
           class="text-gray-600 mr-3"
-          size="16"
+          size="24"
         />
         {{ navLink.name }}
       </router-link>
@@ -61,5 +61,12 @@ export default class NavigationList extends Vue {
 </script>
 
 <style scoped>
-
+  .groupName {
+    padding: 4px 19px 6px;
+    font-size: 13px;
+    letter-spacing: 1.1px;
+  }
+  .groupLink {
+    padding: 4px 19px;
+  }
 </style>

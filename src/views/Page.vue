@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div>{{ group.name }}</div>
-    <h1 class="text-xl font-bold mb-6">
+    <div class="groupName">{{ group.name }}</div>
+    <h1 class="font-bold">
       {{ page.name }}
     </h1>
     <section>
@@ -82,5 +82,13 @@ export default class Home extends Vue {
 </script>
 
 <style scoped>
+  h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
 
+  .groupName {
+    font-size: 15px;
+  }
 </style>

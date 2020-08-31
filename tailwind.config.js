@@ -1,4 +1,4 @@
-const { colors, fontFamily } = require('tailwindcss/defaultTheme')
+const { colors, fontFamily, fontSize } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: [],
@@ -6,12 +6,17 @@ module.exports = {
     fontFamily: {
       'sans': ['Roboto', ...fontFamily.sans],
     },
+    fontSize: {
+      ...fontSize,
+      'sm': '0.9375rem'
+    },
     extend: {
       colors: {
         gray: {
           ...colors.gray,
           400: '#909198',
           600: '#606167',
+          700: '#2f3035',
           800: '#1d1f22',
           900: '#17191c',
         }

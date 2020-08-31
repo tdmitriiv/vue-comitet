@@ -1,5 +1,5 @@
 <template>
-  <td class="border border-gray-800 border-r-0 px-4 py-2">
+  <td class="border border-gray-700 px-4 py-2">
     <router-link
       :to="link"
       class="text-blue-500 inline-block border-b border-dashed border-blue-500"

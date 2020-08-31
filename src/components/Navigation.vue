@@ -2,13 +2,13 @@
   <aside class="border border-gray-800">
     <div class="flex flex-col justify-between h-full">
       <div>
-        <div class="flex items-center text-white py-4 px-5 border-b-2 border-gray-800">
+        <div class="flex items-center text-white border-b-2 border-gray-800 logoWrapper">
           <Logo
-            max-width="20"
-            max-height="20"
-            class="mr-2"
+            max-width="25"
+            max-height="25"
+            class="logo rounded"
           />
-          <span class="inline-block font-bold text-sm leading-none">КМТТ Admin</span>
+          <span class="inline-block font-bold text-sm leading-none">КМТТ admin</span>
         </div>
         <NavigationList :nav-groups="mainNavGroups" />
       </div>
@@ -52,5 +52,11 @@ export default class Menu extends Vue {
 </script>
 
 <style scoped>
+  .logoWrapper {
+    padding: 15px 20px;
+  }
 
+  .logo {
+    margin-right: 10px;
+  }
 </style>

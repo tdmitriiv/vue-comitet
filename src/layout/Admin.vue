@@ -2,7 +2,7 @@
   <div class="layout w-full bg-gray-900 text-gray-400 font-sans">
     <div class="flex h-full min-h-screen">
       <Navigation />
-      <main class="w-3/4 px-10 py-6">
+      <main class="w-3/4">
         <slot />
       </main>
     </div>
@@ -22,6 +22,10 @@ export default class Admin extends Vue {}
 </script>
 
 <style lang="scss" scoped>
+  main {
+    padding: 30px 41px;
+  }
+
   aside {
     width: 100%;
     max-width: 300px;

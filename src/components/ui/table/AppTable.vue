@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex items-center justify-between text-sm">
+    <div class="flex items-center justify-between text-sm mb-4">
       <h4 class="font-medium inline-block">
         {{ title }}
       </h4>
@@ -30,6 +30,10 @@
             v-for="(col, index) in tableHeaders"
             :key="index"
             :col="col"
+            :class="{
+              'border-l-0': index === 0,
+              'border-r-0': index === tableHeaders.length - 1,
+            }"
           />
         </tr>
       </thead>
@@ -44,6 +48,10 @@
             :key="colIndex"
             :value="row[col.field]"
             :link="col.link"
+            :class="{
+              'border-l-0': colIndex === 0,
+              'border-r-0': colIndex === tableHeaders.length - 1,
+            }"
           />
         </tr>
       </tbody>
@@ -123,5 +131,5 @@ export default class AppTable extends Vue {
 </script>
 
 <style scoped>
-
+  h4 { font-size: 15px; }
 </style>

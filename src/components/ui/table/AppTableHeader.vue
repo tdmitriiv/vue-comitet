@@ -1,11 +1,10 @@
 <template>
-  <th class="border border-gray-800 border-l-0 px-4 py-2">
+  <th class="border border-gray-700">
     <div class="flex items-center font-normal text-gray-600 text-left">
       <AppIcon
         v-if="col.icon"
         :icon="col.icon"
         size="16"
-        class="mr-2"
       />
       {{ col.name }}
     </div>
@@ -23,11 +22,20 @@ import AppIcon from '@/components/ui/AppIcon.vue';
   },
 })
 export default class AppTableHeader extends Vue {
+  /**
+   * Данные колонки заголовка таблицы
+   */
   @Prop({})
-  col!: TableHeader
+  readonly col!: TableHeader
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  th {
+    padding: 6px 9px;
 
+    svg {
+      margin-right: 5px;
+    }
+  }
 </style>
