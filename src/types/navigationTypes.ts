@@ -1,8 +1,21 @@
 /**
- *
+ * Доступны компоненты для содержимого
  */
+export enum ComponentNames {
+	Button = 'AppButton',
+	Table = 'AppTable',
+}
+
 export interface ContentItem {
-	component: string;
+	/**
+	 * Объект компонента содержимого страницы
+	 */
+	component: ComponentNames;
+
+	/**
+	 * Опции компонента
+	 * см Props компонентов ComponentNames
+	 */
 	options: Record<string, any>;
 }
 

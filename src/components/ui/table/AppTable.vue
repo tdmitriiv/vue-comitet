@@ -49,6 +49,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
+import { SearchIcon } from 'vue-feather-icons';
 import AppTableCell from '@/components/ui/table/AppTableCell.vue';
 import AppTableHeader from '@/components/ui/table/AppTableHeader.vue';
 import { TableHeader } from '@/types/tableTypes';
@@ -66,6 +67,7 @@ import { TableHeader } from '@/types/tableTypes';
   components: {
     AppTableCell,
     AppTableHeader,
+    SearchIcon,
   },
 })
 export default class AppTable extends Vue {

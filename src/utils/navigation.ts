@@ -2,11 +2,12 @@ import {
 	NavigationGroup,
 	NavigationItem,
 	NavigationPage,
+	ComponentNames,
 } from '@/types/navigationTypes';
 
 const publications = [
 	{
-		component: 'AppTable',
+		component: ComponentNames.Table,
 		options: {
 			title: 'Список пользователей',
 			searchField: 'name',
@@ -57,7 +58,7 @@ const publications = [
 		},
 	},
 	{
-		component: 'AppButton',
+		component: ComponentNames.Button,
 		options: {
 			title: 'Добавить пользователя',
 			events: {
