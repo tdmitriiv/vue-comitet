@@ -1,0 +1,27 @@
+<template>
+  <td class="border border-gray-800 border-r-0 px-4 py-2">
+    <router-link
+      :to="link"
+      class="text-blue-500 inline-block border-b border-dashed border-blue-500"
+    >
+      {{ value }}
+    </router-link>
+  </td>
+</template>
+
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator';
+
+@Component
+export default class AppTableCellLink extends Vue {
+  @Prop()
+  readonly value!: string | number;
+
+  @Prop()
+  readonly link!: string;
+}
+</script>
+
+<style scoped>
+
+</style>

@@ -5,6 +5,9 @@ import {
   ComponentNames,
 } from '@/types/navigationTypes';
 
+/**
+ * Описание содержимого страницы публикаций
+ */
 const publications = [
   {
     component: ComponentNames.Table,
@@ -16,6 +19,8 @@ const publications = [
           field: 'id',
           name: 'ID',
           icon: 'ListIcon',
+          component: 'AppTableCellLink',
+          link: '/'
         },
         {
           field: 'name',

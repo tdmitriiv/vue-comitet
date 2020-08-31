@@ -38,12 +38,13 @@
           v-for="(row, rowIndex) in filteredTableData"
           :key="rowIndex"
         >
-          <AppTableCell
+          <component
+            :is="col.component || 'AppTableCell'"
             v-for="(col, colIndex) in tableHeaders"
             :key="colIndex"
-          >
-            {{ row[col.field] }}
-          </AppTableCell>
+            :value="row[col.field]"
+            :link="col.link"
+          />
         </tr>
       </tbody>
     </table>
@@ -54,6 +55,7 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { SearchIcon } from 'vue-feather-icons';
 import AppTableCell from '@/components/ui/table/AppTableCell.vue';
+import AppTableCellLink from '@/components/ui/table/AppTableCellLink.vue';
 import AppTableHeader from '@/components/ui/table/AppTableHeader.vue';
 import { TableHeader } from '@/types/tableTypes';
 
@@ -69,6 +71,7 @@ import { TableHeader } from '@/types/tableTypes';
 @Component({
   components: {
     AppTableCell,
+    AppTableCellLink,
     AppTableHeader,
     SearchIcon,
   },
