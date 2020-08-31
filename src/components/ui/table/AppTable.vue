@@ -53,6 +53,15 @@ import AppTableCell from '@/components/ui/table/AppTableCell.vue';
 import AppTableHeader from '@/components/ui/table/AppTableHeader.vue';
 import { TableHeader } from '@/types/tableTypes';
 
+/**
+ * Базовый компонент таблицы
+ * <AppTable
+ *  :tableHeaders="[]"
+ *  :tableData="[]"
+ *  title="Заголовок"
+ *  searchField="name"
+ * />
+ */
 @Component({
   components: {
     AppTableCell,

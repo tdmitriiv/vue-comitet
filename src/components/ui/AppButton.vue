@@ -15,6 +15,10 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
+/**
+ * Компонент кнопки
+ * <AppButton title="Кнопка" :events="{ click: () => {}">
+ */
 @Component
 export default class AppButton extends Vue {
   /**
@@ -24,7 +28,7 @@ export default class AppButton extends Vue {
   readonly title!: string;
 
   /**
-   * Events - события кнопки
+   * Events - объект, содержащий события кнопки
    */
   @Prop({ default: () => ({}) })
   readonly events!: Record<string, () => void>;
