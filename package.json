@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "vue webpack build",
   "main": "index.js",
+  "homepage": "http://tdmitriiv.github.io/vue-comitet",
   "scripts": {
     "dev": "webpack-dev-server --mode=development --config build/webpack.config.dev.js",
     "build": "cross-env NODE_ENV=\"production\" webpack --config build/webpack.config.dev.js",
-    "lint": "eslint --ext .js,.vue,.ts src --fix"
+    "lint": "eslint --ext .js,.vue,.ts src --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -40,6 +43,7 @@
     "eslint-plugin-jsdoc": "^30.2.4",
     "eslint-plugin-vue": "^6.2.2",
     "file-loader": "^6.0.0",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.3.0",
     "node-sass": "^4.14.1",
     "postcss": "^7.0.32",
