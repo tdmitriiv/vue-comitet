@@ -15,6 +15,7 @@
         v-for="(navLink, linkIndex) in group.items"
         :key="linkIndex"
         :to="`/${navLink.url}`"
+        :class="{ 'bg-white bg-opacity-10': navLink.url === currentPageUrl }"
         class="flex py-1 px-5 text-sm"
       >
         <AppIcon
@@ -49,6 +50,13 @@ export default class NavigationList extends Vue {
    */
   @Prop()
   readonly navGroups!: NavigationGroup[];
+
+  /**
+   * Свойство возвращает url текущей страницы
+   */
+  get currentPageUrl(): string | undefined {
+    return this.$route.params.url;
+  }
 }
 </script>
 
