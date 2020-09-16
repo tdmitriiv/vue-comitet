@@ -13,16 +13,20 @@ export interface ContentItem {
   component: ComponentNames;
 
   /**
+   * <pre>
    * Опции компонента
    * см Props компонентов ComponentNames
+   * </pre>
    */
   options: Record<string, any>;
 }
 
 /**
+ * <pre>
  * Группа представляет собой отдельный раздел в навигации с заголовком и пунктами меню
  * name - заголовок
  * items - пункты меню
+ * </pre>
  */
 export interface NavigationGroup {
   /**
@@ -61,16 +65,25 @@ export interface NavigationItem {
   content?: Array<ContentItem> | string | null;
 
   /**
+   * <pre>
    * Icon - компонент иконки рядом с пунктом меню.
    * список доступных иконок https://vue-feather-icons.egoist.sh/
+   * </pre>
    */
   icon?: string;
+
+  /**
+   * атрибуты пункта меню
+   */
+  options: NavigationItemOptions;
 }
 
 /**
+ * <pre>
  * Объект данных страницы
  * page - объект страницы
  * group - текущий раздел страницы
+ * </pre>
  */
 export interface NavigationPage {
   /**
@@ -82,4 +95,14 @@ export interface NavigationPage {
    * Group - объект содержащий информацию о текущем разделе
    */
   group: NavigationGroup | undefined;
+}
+
+/**
+ * Атрибуты пункта меню
+ */
+export interface NavigationItemOptions {
+  /**
+   * css класс пункта меню
+   */
+  class?: string;
 }

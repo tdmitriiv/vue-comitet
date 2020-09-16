@@ -1,5 +1,5 @@
 <template>
-  <td class="border border-gray-700 px-4 py-2">
+  <td>
     <div class="flex items-center font-normal text-gray-600 text-left">
       {{ value ? 'Активен' : 'Отключен' }}
     </div>

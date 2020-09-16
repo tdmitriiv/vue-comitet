@@ -1,5 +1,5 @@
 <template>
-  <td class="border border-gray-700 px-4 py-2">
+  <td>
     <div
       class="font-normal text-center text-gray-600 text-left relative"
       @mouseenter="isOpen = true"

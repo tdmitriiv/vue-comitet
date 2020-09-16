@@ -1,20 +1,20 @@
 <template>
   <div>
-    <div class="flex items-center justify-between text-sm mb-4">
-      <h4 class="font-medium inline-block">
+    <div class="flex items-center justify-between text-sm" style="margin-bottom: 7px;">
+      <h4 class="font-bold inline-block text-xl leading-6">
         {{ title }}
       </h4>
       <div
         v-if="searchField"
-        class="inline-flex items-center border border-gray-800 py-2 px-3 rounded-lg text-gray-600"
+        class="searchInput inline-flex items-center border border-gray-800 text-gray-600"
       >
         <SearchIcon
-          size="16"
+          size="18"
           class="mr-2"
         />
         <input
           v-model="search"
-          class="bg-transparent appearance-none focus:outline-none placeholder-gray-600"
+          class="bg-transparent appearance-none focus:outline-none placeholder-gray-600 text-xl leading-6"
           type="text"
           placeholder="Поиск"
         >
@@ -24,7 +24,7 @@
       class="table-auto w-full"
       v-bind="$attrs"
     >
-      <thead class="text-sm">
+      <thead class="text-xl">
         <tr>
           <AppTableHeader
             v-for="(col, index) in tableHeaders"
@@ -33,11 +33,12 @@
             :class="{
               'border-l-0': index === 0,
               'border-r-0': index === tableHeaders.length - 1,
+              'tableCell': true,
             }"
           />
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-lg">
         <tr
           v-for="(row, rowIndex) in filteredTableData"
           :key="rowIndex"
@@ -51,6 +52,7 @@
             :class="{
               'border-l-0': colIndex === 0,
               'border-r-0': colIndex === tableHeaders.length - 1,
+              'tableCell border border-gray-700': true
             }"
           />
         </tr>
@@ -130,6 +132,17 @@ export default class AppTable extends Vue {
 }
 </script>
 
-<style scoped>
-  h4 { font-size: 15px; }
+<style lang="scss" scoped>
+  .searchInput {
+    padding: 4px 13px;
+    border-radius: 17px;
+
+    input {
+      max-width: 220px;
+    }
+  }
+
+  .tableCell {
+    padding: .625rem .625rem;
+  }
 </style>

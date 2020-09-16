@@ -19,6 +19,10 @@ module.exports = {
           700: '#2f3035',
           800: '#1d1f22',
           900: '#17191c',
+        },
+        blue: {
+          ...colors.blue,
+          500: '#3680ec'
         }
       },
       spacing: {

@@ -4,11 +4,11 @@
       <div>
         <div class="flex items-center text-white border-b-2 border-gray-800 logoWrapper">
           <Logo
-            max-width="25"
-            max-height="25"
-            class="logo rounded"
+            max-width="34"
+            max-height="34"
+            class="logo"
           />
-          <span class="inline-block font-bold text-sm leading-none">КМТТ admin</span>
+          <span class="inline-block font-bold text-xl leading-none">КМТТ admin</span>
         </div>
         <NavigationList :nav-groups="mainNavGroups" />
       </div>
@@ -53,10 +53,11 @@ export default class Menu extends Vue {
 
 <style scoped>
   .logoWrapper {
-    padding: 15px 20px;
+    padding: 1.25rem 1.625rem;
   }
 
   .logo {
-    margin-right: 10px;
+    margin-right: 0.875rem;
+    border-radius: 0.375rem;
   }
 </style>

@@ -1,10 +1,13 @@
 <template>
-  <th class="border border-gray-700">
+  <th
+    class="border border-gray-700"
+    v-bind="col.options"
+  >
     <div class="flex items-center font-normal text-gray-600 text-left">
       <AppIcon
         v-if="col.icon"
         :icon="col.icon"
-        size="16"
+        size="24"
       />
       {{ col.name }}
     </div>
@@ -32,10 +35,8 @@ export default class AppTableHeader extends Vue {
 
 <style lang="scss" scoped>
   th {
-    padding: 6px 9px;
-
     svg {
-      margin-right: 5px;
+      margin-right: .375rem;
     }
   }
 </style>

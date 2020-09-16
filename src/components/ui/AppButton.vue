@@ -1,7 +1,7 @@
 <template>
   <div>
     <button
-      class="text-white bg-blue-500 hover:bg-blue-700 rounded-md"
+      class="text-xl text-white bg-blue-500 hover:bg-blue-700"
       v-bind="$attrs"
       v-on="events"
     >
@@ -37,8 +37,9 @@ export default class AppButton extends Vue {
 
 <style scoped>
   button {
-    font-size: 14px;
-    border-radius: 10px;
-    padding: 9px 21px;
+    border-radius: 1.125rem;
+    padding: .75rem 1.25rem;
+    line-height: 1.875rem;
+    box-shadow: 0 6px 18px rgba(19, 69, 166, 0.46);
   }
 </style>

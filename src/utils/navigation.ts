@@ -21,28 +21,41 @@ const publications = [
           icon: 'ListIcon',
           component: 'AppTableCellLink',
           link: '/',
+          options: {
+            width: 110,
+          }
         },
         {
           field: 'name',
           name: 'Имя',
           icon: 'UserIcon',
+          options: {
+            width: 344,
+          },
         },
         {
           field: 'email',
           name: 'Email',
           icon: 'AtSignIcon',
+          options: {
+            width: 520,
+          }
         },
         {
           field: 'status',
           name: 'Статус',
           icon: 'InfoIcon',
           component: 'AppTableCellBoolean',
+          options: {
+            width: 290,
+          },
         },
         {
           field: 'actions',
           name: 'Действия',
           icon: 'DiscIcon',
           component: 'AppTableCellDropdown',
+          options: {}
         },
       ],
       tableData: [
@@ -61,7 +74,7 @@ const publications = [
           actions: ['open', 'edit'],
         },
       ],
-      class: 'mb-6',
+      class: 'mb-7',
     },
   },
   {
@@ -85,11 +98,13 @@ export const nav:NavigationGroup[] = [
         name: 'Публикации',
         url: 'publications',
         content: publications,
+        options: {},
       },
       {
         name: 'Мессенджер',
         url: 'messenger',
         content: 'text messenger',
+        options: {},
       },
     ],
   },
@@ -100,6 +115,7 @@ export const nav:NavigationGroup[] = [
         name: 'Подписка на еженедельную рассылку',
         url: 'subscription',
         content: 'text subscription',
+        options: {},
       },
     ],
   },
@@ -110,11 +126,13 @@ export const nav:NavigationGroup[] = [
         name: 'Доступные города',
         url: 'cities',
         content: 'text cities',
+        options: {},
       },
       {
         name: 'Управление пользователями',
         url: 'user-management',
         content: 'text user managment',
+        options: {},
       },
     ],
   },
@@ -126,6 +144,9 @@ export const nav:NavigationGroup[] = [
         url: 'components',
         icon: 'LayersIcon',
         content: 'text components',
+        options: {
+          class: 'font-bold text-lg leading-6'
+        },
       },
     ],
     bottom: true,
