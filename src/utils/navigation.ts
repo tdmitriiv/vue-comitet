@@ -22,7 +22,9 @@ const publications = [
           component: 'AppTableCellLink',
           link: '/',
           options: {
-            width: 110,
+            style: {
+              width: '109px'
+            },
           }
         },
         {
@@ -30,7 +32,9 @@ const publications = [
           name: 'Имя',
           icon: 'UserIcon',
           options: {
-            width: 352,
+            style: {
+              width: '344px',
+            },
           },
         },
         {
@@ -39,7 +43,9 @@ const publications = [
           icon: 'AtSignIcon',
           component: 'AppTableCellMail',
           options: {
-            width: 530,
+            style: {
+              width: '520px',
+            },
           }
         },
         {
@@ -48,7 +54,9 @@ const publications = [
           icon: 'InfoIcon',
           component: 'AppTableCellBoolean',
           options: {
-            width: 290,
+            style: {
+              width: '290px',
+            },
           },
         },
         {

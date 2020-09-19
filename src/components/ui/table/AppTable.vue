@@ -30,10 +30,10 @@
             v-for="(col, index) in tableHeaders"
             :key="index"
             :col="col"
+            class="tableCell"
             :class="{
               'border-l-0': index === 0,
               'border-r-0': index === tableHeaders.length - 1,
-              'tableCell': true,
             }"
           />
         </tr>

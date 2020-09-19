@@ -2,7 +2,7 @@
   <div class="layout w-full bg-gray-900 text-gray-400 font-sans">
     <div class="flex h-full min-h-screen">
       <Navigation />
-      <main>
+      <main class="w-full">
         <slot />
       </main>
     </div>
