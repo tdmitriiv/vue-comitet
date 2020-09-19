@@ -1,9 +1,9 @@
 <template>
-  <aside class="border border-gray-800">
+  <aside class="border border-gray-800 relative z-10">
     <div class="flex items-center text-white border-b-2 border-gray-800 logoWrapper">
       <MenuIcon
         @click="isVisibleMobileNav = !isVisibleMobileNav"
-        class="md:hidden mr-4 cursor-pointer"
+        class="lg:hidden mr-4 cursor-pointer"
         size="24"
       />
       <Logo
@@ -16,10 +16,10 @@
     <div
       @click="isVisibleMobileNav = false"
       :class="[isVisibleMobileNav ? 'fixed bg-opacity-10' : 'static bg-opacity-0']"
-      class="overlay w-full bg-white transition-all duration-300 ease-in md:bg-transparent md:static"
+      class="overlay w-full bg-white transition-all duration-300 ease-in lg:bg-transparent lg:static"
     >
       <div
-        class="navigation bg-gray-900 flex flex-col justify-between md:static"
+        class="navigation bg-gray-900 flex flex-col justify-between lg:static"
         :class="{
         'navigation-active': isVisibleMobileNav,
       }"
@@ -99,7 +99,7 @@ export default class Menu extends Vue {
 
     @apply border-r border-gray-800;
 
-    @media (min-width: theme('screens.md')) {
+    @media (min-width: theme('screens.lg')) {
       border: 0;
       left: 0;
       height: 100%;
