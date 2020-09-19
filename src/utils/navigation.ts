@@ -30,15 +30,16 @@ const publications = [
           name: 'Имя',
           icon: 'UserIcon',
           options: {
-            width: 344,
+            width: 352,
           },
         },
         {
           field: 'email',
           name: 'Email',
           icon: 'AtSignIcon',
+          component: 'AppTableCellMail',
           options: {
-            width: 520,
+            width: 530,
           }
         },
         {
