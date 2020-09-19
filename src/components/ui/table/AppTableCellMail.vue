@@ -1,12 +1,10 @@
 <template>
-  <td>
-    <a
-      :href="`mailto:${value}`"
-      class="inline-block underline text-gray-600"
-    >
-      {{ value }}
-    </a>
-  </td>
+  <a
+    :href="`mailto:${value}`"
+    class="inline-block underline text-gray-600"
+  >
+    {{ value }}
+  </a>
 </template>
 
 <script lang="ts">

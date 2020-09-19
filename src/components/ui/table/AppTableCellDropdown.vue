@@ -1,26 +1,24 @@
 <template>
-  <td>
+  <div
+    class="font-normal text-center text-gray-600 text-left relative"
+    @mouseenter="isOpen = true"
+    @mouseout="isOpen = false"
+  >
+    <MoreHorizontalIcon class="inline-block" />
     <div
-      class="font-normal text-center text-gray-600 text-left relative"
-      @mouseenter="isOpen = true"
-      @mouseout="isOpen = false"
+      v-if="isOpen"
+      class="absolute inset-x-auto mt-2 py-2 w-48 bg-white rounded-lg shadow-xl z-10"
     >
-      <MoreHorizontalIcon class="inline-block" />
-      <div
-        v-if="isOpen"
-        class="absolute inset-x-auto mt-2 py-2 w-48 bg-white rounded-lg shadow-xl z-10"
+      <a
+        v-for="(item, index) in value"
+        :key="index"
+        href="#"
+        class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white"
       >
-        <a
-          v-for="(item, index) in value"
-          :key="index"
-          href="#"
-          class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white"
-        >
-          {{ item }}
-        </a>
-      </div>
+        {{ item }}
+      </a>
     </div>
-  </td>
+  </div>
 </template>
 
 <script lang="ts">

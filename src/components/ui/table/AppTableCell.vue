@@ -1,9 +1,7 @@
 <template>
-  <td>
-    <div class="flex items-center font-normal text-gray-600 text-left">
-      {{ value }}
-    </div>
-  </td>
+  <div class="flex items-center font-normal text-gray-600 text-left">
+    {{ value }}
+  </div>
 </template>
 
 <script lang="ts">

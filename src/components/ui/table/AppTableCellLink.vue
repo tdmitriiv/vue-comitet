@@ -1,12 +1,10 @@
 <template>
-  <td>
-    <router-link
-      :to="link"
-      class="text-blue-500 inline-block border-b border-dashed border-blue-500"
-    >
-      {{ value }}
-    </router-link>
-  </td>
+  <router-link
+    :to="link"
+    class="text-blue-500 inline-block border-b border-dashed border-blue-500"
+  >
+    {{ value }}
+  </router-link>
 </template>
 
 <script lang="ts">

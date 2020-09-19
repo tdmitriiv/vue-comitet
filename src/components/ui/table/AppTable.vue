@@ -24,7 +24,7 @@
       class="table-auto w-full"
       v-bind="$attrs"
     >
-      <thead class="text-xl">
+      <thead class="text-xl hidden md:table-header-group">
         <tr>
           <AppTableHeader
             v-for="(col, index) in tableHeaders"
@@ -32,8 +32,8 @@
             :col="col"
             class="tableCell"
             :class="{
-              'border-l-0': index === 0,
-              'border-r-0': index === tableHeaders.length - 1,
+              'md:border-l-0': index === 0,
+              'md:border-r-0': index === tableHeaders.length - 1,
             }"
           />
         </tr>
@@ -42,19 +42,26 @@
         <tr
           v-for="(row, rowIndex) in filteredTableData"
           :key="rowIndex"
+          class="mb-5 block md:mb-0 md:table-row"
         >
-          <component
-            :is="col.component || 'AppTableCell'"
+          <td
             v-for="(col, colIndex) in tableHeaders"
             :key="colIndex"
-            :value="row[col.field]"
-            :link="col.link"
             :class="{
-              'border-l-0': colIndex === 0,
-              'border-r-0': colIndex === tableHeaders.length - 1,
-              'tableCell border border-gray-700': true
+              'md:border-l-0': colIndex === 0,
+              'md:border-r-0': colIndex === tableHeaders.length - 1,
+              'tableCell block border border-gray-700 w-full md:w-auto md:table-cell': true,
             }"
-          />
+          >
+            <div class="flex md:block">
+              <div class="block md:hidden w-1/3">{{ col.name }}: </div>
+              <component
+                :is="col.component || 'AppTableCell'"
+                :value="row[col.field]"
+                :link="col.link"
+              />
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

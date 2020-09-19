@@ -1,12 +1,10 @@
 <template>
-  <td>
-    <div class="flex items-center font-normal text-gray-600 text-left">
-      <AppCheckbox
-        :checked="value"
-      />
-      {{ value ? 'Активен' : 'Отключен' }}
-    </div>
-  </td>
+  <div class="flex items-center font-normal text-gray-600 text-left">
+    <AppCheckbox
+      :checked="value"
+    />
+    {{ value ? 'Активен' : 'Отключен' }}
+  </div>
 </template>
 
 <script lang="ts">
