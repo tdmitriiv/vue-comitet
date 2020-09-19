@@ -1,6 +1,9 @@
 <template>
   <td>
     <div class="flex items-center font-normal text-gray-600 text-left">
+      <AppCheckbox
+        :checked="value"
+      />
       {{ value ? 'Активен' : 'Отключен' }}
     </div>
   </td>
@@ -8,8 +11,13 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
+import AppCheckbox from '@/components/ui/AppCheckbox.vue';
 
-@Component
+@Component({
+  components: {
+    AppCheckbox,
+  },
+})
 export default class AppTableCellBoolean extends Vue {
   /**
    * Значение ячейки
