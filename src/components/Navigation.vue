@@ -14,16 +14,22 @@
       <span class="inline-block font-bold text-xl leading-none">КМТТ admin</span>
     </div>
     <div
-      class="navigation bg-gray-900 flex flex-col justify-between"
-      :class="{
+      @click="isVisibleMobileNav = false"
+      :class="[isVisibleMobileNav ? 'fixed bg-opacity-10' : 'static bg-opacity-0']"
+      class="overlay w-full bg-white transition-all duration-300 ease-in md:bg-transparent md:static"
+    >
+      <div
+        class="navigation bg-gray-900 flex flex-col justify-between md:static"
+        :class="{
         'navigation-active': isVisibleMobileNav,
       }"
-    >
-      <div>
-        <NavigationList :nav-groups="mainNavGroups" />
-      </div>
-      <div>
-        <NavigationList :nav-groups="bottomNavGroups" />
+      >
+        <div>
+          <NavigationList :nav-groups="mainNavGroups" />
+        </div>
+        <div>
+          <NavigationList :nav-groups="bottomNavGroups" />
+        </div>
       </div>
     </div>
   </aside>
@@ -78,11 +84,14 @@ export default class Menu extends Vue {
     border-radius: .375rem;
   }
 
+  .overlay,
   .navigation {
     height: calc(100% - 76px);
+  }
+
+  .navigation {
     position: fixed;
     left: -420px;
-    transition: left 0.5s ease;
 
     &-active {
       left: 0;
@@ -92,8 +101,8 @@ export default class Menu extends Vue {
 
     @media (min-width: theme('screens.md')) {
       border: 0;
+      left: 0;
       height: 100%;
-      position: static;
       transform: none;
     }
   }
