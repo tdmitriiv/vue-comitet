@@ -1,6 +1,6 @@
 <template>
   <div class="layout w-full bg-gray-900 text-gray-400 font-sans">
-    <div class="flex h-full min-h-screen">
+    <div class="md:flex h-full min-h-screen">
       <Navigation />
       <main class="w-full">
         <slot />
@@ -28,6 +28,9 @@ export default class Admin extends Vue {}
 
   aside {
     width: 100%;
-    max-width: 400px;
+
+    @media (min-width: theme('screens.md')) {
+      max-width: 400px;
+    }
   }
 </style>
