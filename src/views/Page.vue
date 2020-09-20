@@ -1,24 +1,26 @@
 <template>
   <div>
-    <div class="group__name text-xl leading-7 mb-2">
+    <div class="group__name text-xl leading-7 mb-2" v-if="group">
       {{ group.name }}
     </div>
-    <h1 class="font-bold text-3xl leading-10 mb-10">
-      {{ page.name }}
-    </h1>
-    <section>
-      <template v-if="isPageContentComplex">
-        <component
-          :is="element.component"
-          v-for="(element, index) in page.content"
-          :key="index"
-          v-bind="element.options"
-        />
-      </template>
-      <div v-else>
-        {{ page.content }}
-      </div>
-    </section>
+    <template v-if="page">
+      <h1 class="font-bold text-3xl leading-10 mb-10">
+        {{ page.name }}
+      </h1>
+      <section>
+        <template v-if="isPageContentComplex">
+          <component
+            :is="element.component"
+            v-for="(element, index) in page.content"
+            :key="index"
+            v-bind="element.options"
+          />
+        </template>
+        <div v-else>
+          {{ page.content }}
+        </div>
+      </section>
+    </template>
   </div>
 </template>
 
