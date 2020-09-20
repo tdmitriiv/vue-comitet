@@ -22,7 +22,7 @@
       @click="isVisibleMobileNav = false"
     >
       <div
-        class="navigation bg-gray-900 flex flex-col justify-between lg:static"
+        class="navigation fixed bg-gray-900 flex flex-col justify-between lg:static"
         :class="{
           'navigation-active': isVisibleMobileNav,
         }"
@@ -94,7 +94,6 @@ export default class Menu extends Vue {
   }
 
   .navigation {
-    position: fixed;
     left: -420px;
 
     &-active {
