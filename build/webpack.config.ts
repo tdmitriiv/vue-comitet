@@ -1,13 +1,12 @@
-'use strict'
-const webpack = require('webpack');
-const { VueLoaderPlugin } = require('vue-loader');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const path = require('path');
+import * as webpack from 'webpack';
+import * as path from 'path';
+import { VueLoaderPlugin } from 'vue-loader';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const isProd = process.env.NODE_ENV === 'production';
 
-module.exports = {
+export default {
   mode: isProd ? 'production' : 'development',
   entry: [
     './src/index.ts'
