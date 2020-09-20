@@ -5,8 +5,8 @@
   "main": "index.js",
   "homepage": "http://tdmitriiv.github.io/vue-comitet",
   "scripts": {
-    "dev": "webpack-dev-server --mode=development --config build/webpack.config.ts",
-    "build": "cross-env TS_NODE_PROJECT=\"tsconfig-build.json\" NODE_ENV=\"production\" webpack --mode=production --config build/webpack.config.ts",
+    "dev": "webpack-dev-server --mode=development --config build/webpack.dev.config.ts",
+    "build": "cross-env TS_NODE_PROJECT=\"tsconfig.prod.json\" NODE_ENV=\"production\" webpack --mode=production --config build/webpack.prod.config.ts",
     "lint": "eslint --ext .js,.vue,.ts src --fix",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -59,6 +59,7 @@
     "vue-template-compiler": "^2.6.11",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.4"
   }
 }

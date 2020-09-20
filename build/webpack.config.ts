@@ -1,4 +1,4 @@
-import * as webpack from 'webpack';
+import { Configuration } from 'webpack';
 import * as path from 'path';
 import { VueLoaderPlugin } from 'vue-loader';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -6,20 +6,13 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const isProd = process.env.NODE_ENV === 'production';
 
-export default {
-  mode: isProd ? 'production' : 'development',
+const config: Configuration = {
   entry: [
     './src/index.ts'
   ],
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle-[hash].js'
-  },
-  devServer: {
-    hot: true,
-    watchOptions: {
-      poll: true
-    }
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
@@ -44,7 +37,6 @@ export default {
         loader: 'ts-loader',
         options: {
           appendTsSuffixTo: [/\.vue$/],
-          ...isProd ? { configFile: 'tsconfig.prod.json' } : {},
         },
         exclude: /node_modules/
       },
@@ -79,7 +71,6 @@ export default {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    ...isProd ? [] : [ new webpack.HotModuleReplacementPlugin() ],
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -88,3 +79,5 @@ export default {
     })
   ]
 }
+
+export default config;
