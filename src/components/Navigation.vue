@@ -11,7 +11,10 @@
         max-height="34"
         class="logo"
       />
-      <span class="inline-block font-bold text-xl leading-none">КМТТ admin</span>
+      <div class="inline-flex flex-grow justify-between font-bold text-xl leading-none">
+        КМТТ admin
+        <ChevronDownIcon size="24" />
+      </div>
     </div>
     <div
       @click="isVisibleMobileNav = false"
@@ -37,7 +40,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import { MenuIcon } from 'vue-feather-icons';
+import { MenuIcon, ChevronDownIcon } from 'vue-feather-icons';
 import { NavigationGroup } from '@/types/navigationTypes';
 import { nav } from '@/utils/navigation';
 import NavigationList from '@/components/layout/NavigationList.vue';
@@ -48,6 +51,7 @@ import Logo from './Logo.vue';
     Logo,
     NavigationList,
     MenuIcon,
+    ChevronDownIcon,
   },
 })
 export default class Menu extends Vue {
