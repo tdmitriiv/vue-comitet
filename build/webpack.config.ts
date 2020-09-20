@@ -53,20 +53,6 @@ const config: Configuration = {
           esModule: false,
         }
       },
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          'vue-style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              esModule: false
-            }
-          },
-          'postcss-loader',
-          'sass-loader'
-        ]
-      }
     ]
   },
   plugins: [

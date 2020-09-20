@@ -10,6 +10,24 @@ export default merge(baseConfig, {
       poll: true
     }
   },
+  module: {
+    rules: [
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              esModule: false
+            }
+          },
+          'postcss-loader',
+          'sass-loader'
+        ]
+      }
+    ]
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ]
