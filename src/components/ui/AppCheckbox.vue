@@ -2,12 +2,12 @@
   <div
     class="checkbox rounded text-white flex items-center justify-center border"
     :class="[
-    checked ? 'checkbox-active border-transparent' : 'border-gray-600',
-  ]"
+      checked ? 'checkbox-active border-transparent' : 'border-gray-600',
+    ]"
   >
     <CheckIcon
-      :size="size"
       v-if="checked"
+      :size="size"
     />
   </div>
 </template>

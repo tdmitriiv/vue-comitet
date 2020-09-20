@@ -10,7 +10,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component
 export default class AppTableCell extends Vue {
   @Prop()
-  readonly value: any;
+  readonly value!: string | number;
 }
 </script>
 

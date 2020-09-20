@@ -23,9 +23,9 @@ const publications = [
           link: '/',
           options: {
             style: {
-              width: '109px'
+              width: '109px',
             },
-          }
+          },
         },
         {
           field: 'name',
@@ -46,7 +46,7 @@ const publications = [
             style: {
               width: '520px',
             },
-          }
+          },
         },
         {
           field: 'status',
@@ -64,7 +64,7 @@ const publications = [
           name: 'Действия',
           icon: 'DiscIcon',
           component: 'AppTableCellDropdown',
-          options: {}
+          options: {},
         },
       ],
       tableData: [
@@ -154,7 +154,7 @@ export const nav:NavigationGroup[] = [
         icon: 'LayersIcon',
         content: 'text components',
         options: {
-          class: 'font-bold text-lg leading-6'
+          class: 'font-bold text-lg leading-6',
         },
       },
     ],

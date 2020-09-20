@@ -20,7 +20,10 @@ module.exports = {
   ],
   rules: {
     'class-methods-use-this': 'off',
-    'max-len': ['warn',  { 'code': 100 }]
+    'max-len': ['warn',  { 'code': 100 }],
+    'jsdoc/require-returns': 'off',
+    'jsdoc/require-param-type': 'off',
+    'no-console': 'off',
   },
   settings: {
     'import/resolver': {

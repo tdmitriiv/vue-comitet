@@ -67,6 +67,7 @@ export default class NavigationList extends Vue {
 
   /**
    * Метод проверяет является ли группа последней
+   *
    * @param itemIndex - индекс массив групп
    */
   checkIsGroupLast(itemIndex: number): boolean {

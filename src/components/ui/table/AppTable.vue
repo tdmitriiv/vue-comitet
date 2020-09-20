@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex items-center justify-between text-sm" style="margin-bottom: 7px;">
+    <div class="table__header flex items-center justify-between text-sm">
       <h4 class="font-bold inline-block text-xl leading-6">
         {{ title }}
       </h4>
@@ -54,7 +54,9 @@
             }"
           >
             <div class="flex md:block">
-              <div class="block md:hidden w-1/3">{{ col.name }}: </div>
+              <div class="block md:hidden w-1/3">
+                {{ col.name }}:
+              </div>
               <component
                 :is="col.component || 'AppTableCell'"
                 :value="row[col.field]"
@@ -142,6 +144,10 @@ export default class AppTable extends Vue {
 </script>
 
 <style lang="scss" scoped>
+  .table__header {
+    margin-bottom: 7px;
+  }
+
   .searchInput {
     padding: 4px 13px;
     border-radius: 17px;

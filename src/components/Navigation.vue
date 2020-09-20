@@ -2,9 +2,9 @@
   <aside class="border border-gray-800 relative z-10">
     <div class="flex items-center text-white border-b-2 border-gray-800 logoWrapper">
       <MenuIcon
-        @click="isVisibleMobileNav = !isVisibleMobileNav"
         class="lg:hidden mr-4 cursor-pointer"
         size="24"
+        @click="isVisibleMobileNav = !isVisibleMobileNav"
       />
       <Logo
         max-width="34"
@@ -17,15 +17,15 @@
       </div>
     </div>
     <div
-      @click="isVisibleMobileNav = false"
       :class="[isVisibleMobileNav ? 'fixed bg-opacity-10' : 'static bg-opacity-0']"
       class="overlay w-full bg-white transition-all duration-300 ease-in lg:bg-transparent lg:static"
+      @click="isVisibleMobileNav = false"
     >
       <div
         class="navigation bg-gray-900 flex flex-col justify-between lg:static"
         :class="{
-        'navigation-active': isVisibleMobileNav,
-      }"
+          'navigation-active': isVisibleMobileNav,
+        }"
       >
         <div>
           <NavigationList :nav-groups="mainNavGroups" />
