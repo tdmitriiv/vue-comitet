@@ -1,7 +1,15 @@
 const { colors, fontFamily, fontSize } = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: [],
+  purge: {
+    content: [
+      './src/**/*.html',
+      './src/**/*.vue',
+    ],
+    options: {
+      whitelist: ['bg-opacity-10', 'mb-7'],
+    },
+  },
   theme: {
     fontFamily: {
       'sans': ['Roboto', ...fontFamily.sans],
