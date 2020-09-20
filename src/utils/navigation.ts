@@ -4,87 +4,48 @@ import {
   NavigationPage,
   ComponentNames,
 } from '@/types/navigationTypes';
+import cities from '@/resource/cities.json';
+import users from '@/resource/users.json';
+import publications from '@/resource/pulications.json';
 
 /**
  * Описание содержимого страницы публикаций
  */
-const publications = [
+const publicationsConent = [
   {
     component: ComponentNames.Table,
+    options: publications,
+  },
+  {
+    component: ComponentNames.Button,
     options: {
-      title: 'Список пользователей',
-      searchField: 'name',
-      tableHeaders: [
-        {
-          field: 'id',
-          name: 'ID',
-          icon: 'ListIcon',
-          component: 'AppTableCellLink',
-          link: '/',
-          options: {
-            style: {
-              width: '109px',
-            },
-          },
+      title: 'Добавить статью',
+      events: {
+        click: () => {
+          alert('роутинг на страницу формы добавления');
         },
-        {
-          field: 'name',
-          name: 'Имя',
-          icon: 'UserIcon',
-          options: {
-            style: {
-              width: '344px',
-            },
-          },
-        },
-        {
-          field: 'email',
-          name: 'Email',
-          icon: 'AtSignIcon',
-          component: 'AppTableCellMail',
-          options: {
-            style: {
-              width: '520px',
-            },
-          },
-        },
-        {
-          field: 'status',
-          name: 'Статус',
-          icon: 'InfoIcon',
-          component: 'AppTableCellBoolean',
-          options: {
-            style: {
-              width: '290px',
-            },
-          },
-        },
-        {
-          field: 'actions',
-          name: 'Действия',
-          icon: 'DiscIcon',
-          component: 'AppTableCellDropdown',
-          options: {},
-        },
-      ],
-      tableData: [
-        {
-          id: 123,
-          name: 'test',
-          email: 'test@test.ru',
-          status: true,
-          actions: ['add', 'edit'],
-        },
-        {
-          id: 123,
-          name: 'test',
-          email: 'test@test.ru',
-          status: false,
-          actions: ['open', 'edit'],
-        },
-      ],
-      class: 'mb-7',
+      },
     },
+  },
+]
+
+/**
+ * Описание содержимого списка городов
+ */
+const citiesContent = [
+  {
+    component: ComponentNames.Table,
+    options: cities,
+  },
+];
+
+/**
+ * Описание содержимого страницы списка пользователей
+ */
+const manageUsers = [
+  {
+    component: ComponentNames.Table,
+    options: users,
   },
   {
     component: ComponentNames.Button,
@@ -106,13 +67,13 @@ export const nav:NavigationGroup[] = [
       {
         name: 'Публикации',
         url: 'publications',
-        content: publications,
+        content: publicationsConent,
         options: {},
       },
       {
         name: 'Мессенджер',
         url: 'messenger',
-        content: 'text messenger',
+        content: 'реализация компонента списка комментариев',
         options: {},
       },
     ],
@@ -123,7 +84,7 @@ export const nav:NavigationGroup[] = [
       {
         name: 'Подписка на еженедельную рассылку',
         url: 'subscription',
-        content: 'text subscription',
+        content: 'реализация компонента формы',
         options: {},
       },
     ],
@@ -134,13 +95,13 @@ export const nav:NavigationGroup[] = [
       {
         name: 'Доступные города',
         url: 'cities',
-        content: 'text cities',
+        content: citiesContent,
         options: {},
       },
       {
         name: 'Управление пользователями',
         url: 'user-management',
-        content: 'text user managment',
+        content: manageUsers,
         options: {},
       },
     ],

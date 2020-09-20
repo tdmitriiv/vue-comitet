@@ -1,0 +1,46 @@
+{
+  "title": "Статьи",
+  "searchField": "name",
+  "tableHeaders": [
+    {
+      "field": "id",
+      "name": "ID",
+      "icon": "ListIcon",
+      "component": "AppTableCell",
+      "options": {}
+    },
+    {
+      "field": "name",
+      "name": "Наименование",
+      "icon": "FileTextIcon",
+      "component": "AppTableCell",
+      "options": {}
+    },
+    {
+      "field": "actions",
+      "name": "Действия",
+      "icon": "DiscIcon",
+      "component": "AppTableCellDropdown",
+      "options": {}
+    }
+  ],
+  "tableData": [
+    {
+      "id": 1,
+      "name": "Vue 3.0 in action",
+      "actions": [
+        "view",
+        "edit"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Оптимизация webpack приложений",
+      "actions": [
+        "view",
+        "edit"
+      ]
+    }
+  ],
+  "class": "mb-7"
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Список городов",
+  "searchField": "name",
+  "tableHeaders": [
+    {
+      "field": "id",
+      "name": "ID",
+      "icon": "ListIcon",
+      "component": "AppTableCell",
+      "options": {}
+    },
+    {
+      "field": "name",
+      "name": "Имя",
+      "icon": "FlagIcon",
+      "component": "AppTableCell",
+      "options": {}
+    }
+  ],
+  "tableData": [
+    {
+      "id": 1,
+      "name": "Москва"
+    },
+    {
+      "id": 2,
+      "name": "Санкт-Петербург"
+    }
+  ],
+  "class": "mb-7"
+}
